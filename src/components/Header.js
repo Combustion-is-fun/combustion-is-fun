@@ -11,6 +11,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 export default function ButtonAppBar() {
   return (
+      <header>
         <Box sx={{ flexGrow: 1 }}>
           <AppBar>
             <Toolbar>
@@ -30,5 +31,6 @@ export default function ButtonAppBar() {
             </Toolbar>
           </AppBar>
         </Box>
+      </header>
   );
 }
