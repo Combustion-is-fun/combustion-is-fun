@@ -1,8 +1,10 @@
 import React from 'react';
-
+import ContentPage from '../components/ContentPage';
+import div from './Pages.css';
+import style from './Pages.css';
 const About = () => {
   return (
-    <div>
+    <div classname={div} style={{textAlign:'center'}}>
       <header>
         <h1>About</h1>
       </header>

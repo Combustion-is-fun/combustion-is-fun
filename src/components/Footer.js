@@ -10,7 +10,7 @@ export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <footer>
+    <footer style={{padding: 15, spacing: 15, textAlign:'center'}}>
       <hr></hr>
       <h4>combustion is fun</h4>
     </footer>

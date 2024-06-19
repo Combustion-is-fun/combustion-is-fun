@@ -3,7 +3,7 @@ import Footer from './Footer';
 import logo from '../logo.svg';
 import '../App.css';
 
-
+import { Link } from "react-router-dom"
 // Try to export some of the components to there own file
 // remember to commit and npm run deploy 
 // what a load of waffel
@@ -25,21 +25,18 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = [<Link to="/">Home</Link>, <Link to="/about">About</Link>, <Link to="/contact">Contact</Link>];
 
 function DrawerAppBar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [Open, setOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setOpen((prevState) => !prevState);
   };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -69,13 +66,7 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            MUI
-          </Typography>
+
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }}>
@@ -89,10 +80,10 @@ function DrawerAppBar(props) {
         <Drawer
           container={container}
           variant="temporary"
-          open={mobileOpen}
+          open={Open}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: false, // Better open performance on mobile.
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
