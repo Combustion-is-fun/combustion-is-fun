@@ -10,19 +10,9 @@ export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box >
+    <footer>
       <hr></hr>
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-      >
-        <BottomNavigationAction label="Recents" />
-        <BottomNavigationAction label="Favorites" />
-        <BottomNavigationAction label="Nearby" />
-      </BottomNavigation>
-    </Box>
+      <h4>combustion is fun</h4>
+    </footer>
   );
 }
