@@ -25,7 +25,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = [<Link to="/">Home</Link>, <Link to="/about">About</Link>, <Link to="/contact">Contact</Link>];
+const navItems = [<Link to="/">Home</Link>, <Link to="/interesting_bytes">Interesting Bytes</Link>, <Link to="/about">About</Link>, <Link to="/contact">Contact</Link>];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -36,7 +36,7 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign:'center' }}>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -55,25 +55,17 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar>
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
+            onClick={handleDrawerToggle}>
             <MenuIcon />
           </IconButton>
+          <h1 sx={{ textAlign:'center' }}>Combustion is Fun!</h1>
 
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
         </Toolbar>
       </AppBar>
       <nav>
@@ -81,19 +73,11 @@ function DrawerAppBar(props) {
           container={container}
           variant="temporary"
           open={Open}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: false, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
+          onClose={handleDrawerToggle}>
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ display: 'flex' }}>
         <Toolbar />
 
       </Box>

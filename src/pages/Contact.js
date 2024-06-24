@@ -1,8 +1,8 @@
 import React from 'react';
-
+import div from './Pages.css';
 const Contact = () => {
   return (
-    <div>
+    <div classname={div} style={{textAlign:'center'}}>
       <header>
         <h1>Contact</h1>
       </header>

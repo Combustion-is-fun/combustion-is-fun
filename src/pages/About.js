@@ -1,17 +1,31 @@
 import React from 'react';
-import ContentPage from '../components/ContentPage';
-import div from './Pages.css';
-import style from './Pages.css';
+import { Link } from "react-router-dom"
+import Paper from '@mui/material/Paper';
+import CardContent from "@mui/material/CardContent";
+import Box from '@mui/material/Box';
+
+
+
+
+
 const About = () => {
   return (
-    <div classname={div} style={{textAlign:'center'}}>
-      <header>
-        <h1>About</h1>
-      </header>
-      <main>
-        <p>Welcome to my simple React home page! This is a basic example of a React project.</p>
-        <img src="https://img.freepik.com/free-photo/dragons-fantasy-artificial-intelligence-image_23-2150400884.jpg" alt="Placeholder" />
-      </main>
+    <div style={{textAlign:'center'}}>
+        <Paper sx={{bgcolor: '#FEF1E0'}} elevation={24}>
+          <header>
+            <h1>About</h1>
+          </header>
+          <main>
+            <h2>What is this place?</h2>
+            <p>This started as a tiny side project website made with Docsify. Docsify turns markdown text into html. However, I migrated the project to react, a javascript library to increase the user experience.</p>
+            <p></p>
+            <h2>Why that name?</h2>
+            <p>The name is a meme. Once upon a time, one person knew a definition when others didn't and pronounced "Combustion is fun!". It's a metaphor for knowledge about the world we live in.</p>
+            <h2>Values</h2>
+            <p>Truth and freedom including freedom of speech.</p>
+            <p>Creation started 29/12/2023</p>
+          </main>
+        </Paper>
     </div>
   );
 }
