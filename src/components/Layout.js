@@ -23,6 +23,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Slide from '@mui/material/Slide';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+
+
 
 const drawerWidth = 240;
 const navItems = [<Link to="/">Home</Link>, <Link to="/interesting_bytes">Interesting Bytes</Link>, <Link to="/about">About</Link>, <Link to="/contact">Contact</Link>];
@@ -51,6 +55,9 @@ function DrawerAppBar(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
 
   return (
     <Box sx={{ display: 'flex' }}>
