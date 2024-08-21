@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/combustion-is-fun/static/css/main.6c51762a.css",
-    "main.js": "/combustion-is-fun/static/js/main.db10eb08.js",
-    "static/js/453.688297c3.chunk.js": "/combustion-is-fun/static/js/453.688297c3.chunk.js",
-    "static/media/combustion-is-fun.png": "/combustion-is-fun/static/media/combustion-is-fun.7d957db18c6f98b1f703.png",
-    "static/media/logo.svg": "/combustion-is-fun/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/combustion-is-fun/index.html",
-    "main.6c51762a.css.map": "/combustion-is-fun/static/css/main.6c51762a.css.map",
-    "main.db10eb08.js.map": "/combustion-is-fun/static/js/main.db10eb08.js.map",
-    "453.688297c3.chunk.js.map": "/combustion-is-fun/static/js/453.688297c3.chunk.js.map"
+    "main.css": "/static/css/main.6c51762a.css",
+    "main.js": "/static/js/main.b4b884e8.js",
+    "static/js/453.688297c3.chunk.js": "/static/js/453.688297c3.chunk.js",
+    "static/media/combustion-is-fun.png": "/static/media/combustion-is-fun.7d957db18c6f98b1f703.png",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.6c51762a.css.map": "/static/css/main.6c51762a.css.map",
+    "main.b4b884e8.js.map": "/static/js/main.b4b884e8.js.map",
+    "453.688297c3.chunk.js.map": "/static/js/453.688297c3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6c51762a.css",
-    "static/js/main.db10eb08.js"
+    "static/js/main.b4b884e8.js"
   ]
 }
