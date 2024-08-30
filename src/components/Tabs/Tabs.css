@@ -1,0 +1,52 @@
+
+.tabs__box {
+  margin: 0px 0px 2px -2px;
+}
+
+.tabs__box:after {
+  content: "";
+  display: block;
+  overflow-x: scroll;
+  /*border-bottom: 1px solid #dddddd;*/
+}
+
+.tabs__tab {
+  text-decoration: none;
+  /*display: inline-block;*/
+  padding: 20px 30px;
+  font-size: 20px;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, rbga(245, 222, 179, 1) 0%, #FEF1E0 100%);
+  color: rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+  font-family: Times New Roman, Times, serif;
+
+  cursor: pointer;
+/* border: none;
+  outline: none;
+  margin: 4px;    
+    
+    
+*/
+}
+
+
+.tabs__tab:hover {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.tabs__tab-active {
+  color: rgba(0, 0, 0, 1);
+  font-weight: bold;
+  border-bottom: none;
+  white-space: nowrap;
+  background-color: transparent;
+  background: linear-gradient( Wheat, #FEF1E0 100%);
+}
+.tabs__tab-active:after {
+  content: "";
+  display: flex;
+
+}

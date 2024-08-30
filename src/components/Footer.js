@@ -1,18 +1,16 @@
+
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-export default function SimpleBottomNavigation() {
-  const [value, setValue] = React.useState(0);
-
-  return (
-    <footer style={{padding: 15, spacing: 15, textAlign:'center'}}>
-      <hr></hr>
-      <h4>combustion is fun</h4>
-    </footer>
+export default function Footer() {
+    const list = {
+        listStyle: 'none',
+        listStyleType: 'none',
+        display: 'inline-block'}
+    return (
+    <div style={{width: '100vw', height: '50vh', float: 'left', background: '#1975d1' }}>
+        <div style={{padding: 0, spacing: 0, textAlign:'center'}}>
+            <h5><a href="#/woke_joke">Diversity, Equity and Inclusion</a></h5>
+        </div>
+    </div>
   );
-}
+} 

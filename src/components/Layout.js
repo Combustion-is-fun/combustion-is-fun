@@ -26,12 +26,36 @@ import Button from '@mui/material/Button';
 import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
 
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
 
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+
+const linkcss = {textDecoration: 'none', color: "White", fontSize: "30px", fontFamily: "Times New Roman, Times, serif", fontWeight:"bold"}
 const drawerWidth = 240;
-const navItems = [<Link to="/">Home</Link>, <Link to="/interesting_bytes">Interesting Bytes</Link>, <Link to="/about">About</Link>, <Link to="/contact">Contact</Link>];
+const navItems = [<Link to="/" style={linkcss}>Home</Link>, <Link to="/interesting_bytes" style={linkcss}>Interesting Bytes</Link>, <Link to="/about" style={linkcss}>About</Link>, <Link to="/contact" style={linkcss}>Contact</Link>];
 
-function DrawerAppBar(props) {
+function DrawerAppBar(props) {    
   const { window } = props;
   const [Open, setOpen] = React.useState(false);
 
@@ -40,13 +64,13 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign:'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{backgroundColor: '#DDD'}}>
       <Divider />
-      <List>
+      <List sx={{spacing: "0px"}}>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+          <ListItem key={item} sx={{bgcolor: '#DDD'}}>
+            <ListItemButton sx={{ textAlign: 'center', bgcolor: '#1975d1', padding: "2px"}}>
+              <ListItemText primary={item}/>
             </ListItemButton>
           </ListItem>
         ))}
@@ -60,21 +84,28 @@ function DrawerAppBar(props) {
   });
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}>
-            <MenuIcon />
-          </IconButton>
-          <h1 sx={{ textAlign:'center' }}>Combustion is Fun!</h1>
+    <React.Fragment>
+        <CssBaseline />
+        <HideOnScroll {...props}>
+            <Box sx={{ display: 'flex'}}>
+                <CssBaseline />
+                <AppBar>
+                    <Toolbar className="AppBar">
 
-        </Toolbar>
-      </AppBar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            sx={{ mr: 10 }}>
+                            <MenuIcon />
+                        </IconButton>
+                        <h1>Combustion is Fun!</h1>
+        
+                    </Toolbar>
+                </AppBar>
+            </Box>
+        </HideOnScroll>
       <nav>
         <Drawer
           container={container}
@@ -88,7 +119,7 @@ function DrawerAppBar(props) {
         <Toolbar />
 
       </Box>
-    </Box>
+    </React.Fragment>
   );
 }
 

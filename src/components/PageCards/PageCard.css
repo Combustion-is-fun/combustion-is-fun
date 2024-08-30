@@ -1,0 +1,18 @@
+.image {
+    width: 100%;
+
+
+}
+.cardbox {
+    width: 25%;
+    justify-contents: center;
+    float: left;
+    padding: 5px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #FEF1E0;
+}
+@media only screen and (max-width: 800px) {
+    .cardbox{
+        width: 100%;}
+}
